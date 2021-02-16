@@ -18,5 +18,5 @@ COPY . .
 #RUN npm run test:coverage
 RUN npm run build
 
-RUN npm run copy
+#RUN npm run copy
 RUN npm run zipdist
