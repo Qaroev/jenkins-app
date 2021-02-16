@@ -16,7 +16,7 @@ RUN npm i && mkdir /ng-app && cp -R ./node_modules ./ng-app
 WORKDIR /ng-app
 COPY . .
 #RUN npm run test:coverage
-RUN npm run build
+#RUN npm run build
 #
 #RUN npm run copy
 RUN npm run zipdist
