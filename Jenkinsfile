@@ -16,7 +16,6 @@ node{
         sh 'docker cp jenkinsapp${BUILD_NUMBER}:./ng-app/dist/build-latest.zip .'
         sh 'docker rm jenkinsapp${BUILD_NUMBER} --force'
         sh 'docker rmi temp/temp --force'
-        sh 'curl -u admin:AP2A3ijtMQrrF3bBJN9WvVf6jxf -T build-latest.zip  PUT "http://18.159.82.82:8082/artifactory/test-rep/jenkins.zip"'
+        sh 'curl -v --user admin:AP2A3ijtMQrrF3bBJN9WvVf6jxf -T build-latest.zip -X PUT "http://18.159.82.82:8082/artifactory/test-rep/jenkins.zip"'
     }
-
 }
