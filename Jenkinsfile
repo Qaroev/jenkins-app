@@ -1,6 +1,11 @@
 node{
     stage('Checkout SCM') {
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '539c792a-56e7-4b63-942e-26ee412f7bfe', url: 'https://github.com/Qaroev/jenkins-app.git']]])   }
+     agent {
+                label 'special'
+          }
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '539c792a-56e7-4b63-942e-26ee412f7bfe', url: 'https://github.com/Qaroev/jenkins-app.git']]])
+
+      }
 
     stage('Build dockerfile') {
      docker.build('temp/temp')
